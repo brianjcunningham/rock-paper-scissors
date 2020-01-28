@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h> 
+#include "gamelogic.h"
 
 int main()
 {
@@ -14,12 +15,13 @@ int main()
     int computer_picks = rand() % 3; // this should provide a random number between 0 and 2
     char user_input = getchar();
     
-    while (user_input != 'R' || user_input != 'r' || user_input != 'P' || user_input != 'p' || user_input != 'S' || user_input != 's'){
-        printf("Please Enter a Valid Input\n");
+    while (user_input != 'R' && user_input != 'r' && user_input != 'P' && user_input != 'p' && user_input != 'S' && user_input != 's'){
         user_input = getchar();
     }
-    
     printf("The Computer has picked %i!\n",computer_picks);
+    printf("You have picked %c!\n",user_input);
+    int output_from_function = get_game_logic(user_input,computer_picks);
+    printf("here is a number five %i",get_game_logic(user_input, computer_picks));
     // game logic
 //     switch (user_input) {
 //         case 'R' || 'r':    
